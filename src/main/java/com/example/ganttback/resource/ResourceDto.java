@@ -1,6 +1,6 @@
-package com.example.ganttback;
+package com.example.ganttback.resource;
 
-public class Resource {
+public class ResourceDto {
     private Long id;
     private String name;
     private Long capacity;
@@ -56,7 +56,7 @@ public class Resource {
         this.salary = salary;
     }
 
-    public Resource(Long id, String name, Long capacity, Long occupancy, Long salary) {
+    public ResourceDto(Long id, String name, Long capacity, Long occupancy, Long salary) {
         this.id = id;
         this.name = name;
         this.capacity = capacity;
@@ -64,5 +64,5 @@ public class Resource {
         this.salary = salary;
     }
 
-    public Resource() {}
+    public ResourceDto() {}
 }

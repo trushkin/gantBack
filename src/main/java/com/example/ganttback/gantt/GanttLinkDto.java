@@ -1,6 +1,6 @@
-package com.example.ganttback;
+package com.example.ganttback.gantt;
 
-public class GanttLink {
+public class GanttLinkDto {
     private Long id;
     private Long target;
     private Long source;
@@ -38,7 +38,7 @@ public class GanttLink {
         this.type = type;
     }
 
-    public GanttLink(Long id, Long target, Long source, String type) {
+    public GanttLinkDto(Long id, Long target, Long source, String type) {
         this.id = id;
         this.target = target;
         this.source = source;

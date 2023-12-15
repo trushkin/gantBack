@@ -1,4 +1,4 @@
-package com.example.ganttback;
+package com.example.ganttback.gantt;
 
 import java.time.LocalDate;
 
@@ -9,14 +9,14 @@ public class GanttChartBuilder {
         this.chart = new GanttChart();
     }
 
-    public GanttChartBuilder addTask(Long id, String text, LocalDate startDate, Integer duration, Double progress) {
-        GanttTask task = new GanttTask(id, text, startDate, duration, progress);
+    public GanttChartBuilder addTask(Long id, String text, LocalDate startDate, Long duration, Double progress) {
+        GanttTaskDto task = new GanttTaskDto(id, text, startDate, duration, progress);
         this.chart.addTask(task);
         return this;
     }
 
     public GanttChartBuilder addLink(Long id, Long target, Long source, String type) {
-        GanttLink link = new GanttLink(id, target, source, type);
+        GanttLinkDto link = new GanttLinkDto(id, target, source, type);
         this.chart.addLink(link);
         return this;
     }

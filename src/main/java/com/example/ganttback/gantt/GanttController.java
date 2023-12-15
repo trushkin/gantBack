@@ -1,4 +1,4 @@
-package com.example.ganttback;
+package com.example.ganttback.gantt;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,9 +20,9 @@ public class GanttController {
     public GanttChart getChart(){
 
         return new GanttChartBuilder()
-                .addTask(1L, "Task #1", LocalDate.of(2020, 2, 12), 3, 0.6)
-                .addTask(2L, "Task #2", LocalDate.of(2020, 2, 16), 3, 0.4)
-                .addTask(3L, "Task #3", LocalDate.of(2020, 2, 18), 3, 0.4)
+                .addTask(1L, "Task #1", LocalDate.of(2020, 2, 12), 3L, 0.6)
+                .addTask(2L, "Task #2", LocalDate.of(2020, 2, 16), 3L, 0.4)
+                .addTask(3L, "Task #3", LocalDate.of(2020, 2, 18), 3L, 0.4)
                 .addLink(1L, 2L, 1L, "0")
                 .build();
 

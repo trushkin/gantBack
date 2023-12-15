@@ -1,18 +1,18 @@
-package com.example.ganttback;
+package com.example.ganttback.gantt;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDate;
 
-public class GanttTask {
+public class GanttTaskDto {
     private Long id;
     private String text;
     @JsonProperty("start_date")
     private LocalDate startDate;
-    private Integer duration;
+    private Long duration;
     private Double progress;
 
-    public GanttTask(Long id, String text, LocalDate startDate, Integer duration, Double progress) {
+    public GanttTaskDto(Long id, String text, LocalDate startDate, Long duration, Double progress) {
         this.id = id;
         this.text = text;
         this.startDate = startDate;
@@ -44,11 +44,11 @@ public class GanttTask {
         this.startDate = startDate;
     }
 
-    public Integer getDuration() {
+    public Long getDuration() {
         return duration;
     }
 
-    public void setDuration(Integer duration) {
+    public void setDuration(Long duration) {
         this.duration = duration;
     }
 
