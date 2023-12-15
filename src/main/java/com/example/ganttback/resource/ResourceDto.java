@@ -7,6 +7,15 @@ public class ResourceDto {
     private Long occupancy;
     private Long salary;
     private Long totalCost;
+    private Long userId;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public Long getTotalCost() {
         return totalCost;
@@ -56,12 +65,14 @@ public class ResourceDto {
         this.salary = salary;
     }
 
-    public ResourceDto(Long id, String name, Long capacity, Long occupancy, Long salary) {
+    public ResourceDto(Long id, String name, Long capacity, Long occupancy, Long salary, Long totalCost, Long userId) {
         this.id = id;
         this.name = name;
         this.capacity = capacity;
         this.occupancy = occupancy;
         this.salary = salary;
+        this.totalCost = totalCost;
+        this.userId = userId;
     }
 
     public ResourceDto() {}

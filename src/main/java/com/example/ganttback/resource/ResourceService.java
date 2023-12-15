@@ -2,6 +2,7 @@ package com.example.ganttback.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
@@ -11,7 +12,14 @@ public class ResourceService {
     ResourceRepository resourceRepository;
     @Autowired
     ResourceMapper resourceMapper;
+
     public List<ResourceDto> getAllResources(){
         return resourceRepository.findAll().stream().map(resourceMapper::toResourceDto).toList();
+    }
+    public void deleteResource(Long id){
+        resourceRepository.deleteById(id);
+    }
+    public void saveResource(ResourceDto resourceDto){
+
     }
 }

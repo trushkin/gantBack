@@ -15,6 +15,10 @@ public class ResourceMapper {
                 .setSalary(resource.getSalary())
                 .setOccupancy(0L) //TEMP
                 .setTotalCost(0L) //TEMP
+                .setUserId(resource.getUser().getId()) //TEMP
                 .build();
     }
+//    public Resource toResourceEntity(ResourceDto resourceDto){
+//
+//    }
 }

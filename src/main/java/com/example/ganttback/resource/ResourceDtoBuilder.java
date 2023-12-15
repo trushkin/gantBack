@@ -35,6 +35,10 @@ public class ResourceDtoBuilder {
         this.resource.setTotalCost(totalCost);
         return this;
     }
+    public ResourceDtoBuilder setUserId(Long userId){
+        this.resource.setUserId(userId);
+        return this;
+    }
 
     public ResourceDto build() {
         return resource;

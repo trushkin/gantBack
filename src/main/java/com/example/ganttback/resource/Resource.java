@@ -1,6 +1,6 @@
 package com.example.ganttback.resource;
 
-import com.example.ganttback.User;
+import com.example.ganttback.user.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
