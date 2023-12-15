@@ -7,9 +7,19 @@ public class GanttChart {
     private List<GanttTaskDto> data;
     private List<GanttLinkDto> links;
 
+    private Long userId;
+
     public GanttChart() {
         this.data = new ArrayList<>();
         this.links = new ArrayList<>();
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public void addTask(GanttTaskDto task) {

@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     UserService userService;
+
     @PostMapping("/login")
-    //@CrossOrigin(origins = "http://localhost:3000")
-    Long login(@RequestBody UserDto userDto){
+        //@CrossOrigin(origins = "http://localhost:3000")
+    Long login(@RequestBody UserDto userDto) {
         System.out.println(userDto.getEmail());
         System.out.println(userDto.getPassword());
         return userService.login(userDto);

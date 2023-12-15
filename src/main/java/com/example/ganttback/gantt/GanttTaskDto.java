@@ -12,16 +12,39 @@ public class GanttTaskDto {
     private Long duration;
     private Double progress;
 
-    public GanttTaskDto(Long id, String text, LocalDate startDate, Long duration, Double progress) {
+    @JsonProperty("owner")
+    private String resource;
+
+    private String priority;
+
+    public GanttTaskDto(Long id, String text, LocalDate startDate, Long duration, Double progress, String resource, String priority) {
         this.id = id;
         this.text = text;
         this.startDate = startDate;
         this.duration = duration;
         this.progress = progress;
+        this.resource = resource;
+        this.priority = priority;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public String getResource() {
+        return resource;
+    }
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 
     public void setId(Long id) {
