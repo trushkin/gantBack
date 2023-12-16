@@ -1,10 +1,19 @@
-package com.example.ganttback.gantt;
+package com.example.ganttback.gantt.link;
 
 public class GanttLinkDto {
     private Long id;
     private Long target;
     private Long source;
-    private String type;
+    private Long type;
+    private Long userId;
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public Long getId() {
         return id;
@@ -30,18 +39,29 @@ public class GanttLinkDto {
         this.source = source;
     }
 
-    public String getType() {
+    public Long getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Long type) {
         this.type = type;
     }
 
-    public GanttLinkDto(Long id, Long target, Long source, String type) {
+    public GanttLinkDto() {
+    }
+
+    public GanttLinkDto(Long id, Long target, Long source, Long type) {
         this.id = id;
         this.target = target;
         this.source = source;
         this.type = type;
+    }
+
+    public GanttLinkDto(Long id, Long target, Long source, Long type, Long userId) {
+        this.id = id;
+        this.target = target;
+        this.source = source;
+        this.type = type;
+        this.userId = userId;
     }
 }

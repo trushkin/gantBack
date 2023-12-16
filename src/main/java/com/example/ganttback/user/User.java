@@ -1,6 +1,9 @@
 package com.example.ganttback.user;
 
+import com.example.ganttback.gantt.link.GanttLink;
+import com.example.ganttback.gantt.task.GanttTask;
 import com.example.ganttback.resource.Resource;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -23,8 +26,39 @@ public class User {
     private String email;
     @Column(name = "password")
     private String password;
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Resource> resources;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<GanttTask> tasks;
+
+    public User(Long id, String email, String password, List<Resource> resources, List<GanttTask> tasks, List<GanttLink> links) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.resources = resources;
+        this.tasks = tasks;
+        this.links = links;
+    }
+
+    public List<GanttTask> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<GanttTask> tasks) {
+        this.tasks = tasks;
+    }
+
+    public List<GanttLink> getLinks() {
+        return links;
+    }
+
+    public void setLinks(List<GanttLink> links) {
+        this.links = links;
+    }
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<GanttLink> links;
+
     public User(String email, String password) {
         this.email = email;
         this.password = password;

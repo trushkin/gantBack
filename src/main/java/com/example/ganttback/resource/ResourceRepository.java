@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ResourceRepository extends JpaRepository<Resource, Long> {
     List<Resource> findAllByUserId(Long userId);
+    Resource findByName(String name);
 }

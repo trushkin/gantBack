@@ -16,12 +16,6 @@ public class UserService {
     }
 
     public Long login(UserDto userDto) {
-       // userRepository.save(new User("vlad.trukhan@gmail.com", passwordEncoder.encode("trukhan123")));
-        System.out.println(userDto.getPassword().equals("trukhan123"));
-        System.out.println(userDto.getPassword());
-        System.out.println(passwordEncoder.matches("trukhan123", userDto.getPassword()));
-        System.out.println(passwordEncoder.encode(userDto.getPassword()));
-        System.out.println(passwordEncoder.encode(userDto.getPassword()));
         System.out.println(userDto.getEmail());
 //        Long t = userRepository.findByEmailAndPassword(userDto.getEmail(), passwordEncoder.encode(userDto.getPassword())).get().getId();
         if (userRepository.findByEmail(userDto.getEmail()).isPresent()) {

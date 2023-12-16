@@ -1,6 +1,11 @@
 package com.example.ganttback.gantt;
 
+import com.example.ganttback.gantt.link.GanttLink;
+import com.example.ganttback.gantt.link.GanttLinkDto;
+import com.example.ganttback.gantt.task.GanttTaskDto;
+
 import java.time.LocalDate;
+import java.util.List;
 
 public class GanttChartBuilder {
     private final GanttChart chart;
@@ -15,13 +20,22 @@ public class GanttChartBuilder {
         return this;
     }
 
-    public GanttChartBuilder addLink(Long id, Long target, Long source, String type) {
+    public GanttChartBuilder addLink(Long id, Long target, Long source, Long type) {
         GanttLinkDto link = new GanttLinkDto(id, target, source, type);
         this.chart.addLink(link);
         return this;
     }
-    public GanttChartBuilder setUserId(Long userId){
-        this.setUserId(userId);
+    public GanttChartBuilder setTasks(List<GanttTaskDto> tasks){
+        this.chart.setData(tasks);
+        return this;
+    }
+    public GanttChartBuilder setLinks(List<GanttLinkDto> links){
+        this.chart.setLinks(links);
+        return this;
+    }
+
+    public GanttChartBuilder setUserId(Long userId) {
+        this.chart.setUserId(userId);
         return this;
     }
 
