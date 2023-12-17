@@ -1,5 +1,6 @@
 package com.example.ganttback.resource;
 
+import com.example.ganttback.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -7,6 +8,8 @@ import org.springframework.stereotype.Component;
 public class ResourceMapper {
     @Autowired
     ResourceRepository resourceRepository; //добавить userId
+    @Autowired
+    UserRepository userRepository;
     public ResourceDto toResourceDto(Resource resource){
         return new ResourceDtoBuilder()
                 .setId(resource.getId())
@@ -18,7 +21,12 @@ public class ResourceMapper {
                 .setUserId(resource.getUser().getId()) //TEMP
                 .build();
     }
-//    public Resource toResourceEntity(ResourceDto resourceDto){
-//
-//    }
+    public Resource toResourceEntity(ResourceDto resourceDto, Long userId){
+        return new ResourceBuilder()
+                .setName(resourceDto.getName())
+                .setCapacity(resourceDto.getCapacity())
+                .setSalary(resourceDto.getSalary())
+                .setUser(userRepository.findById(userId).get())
+                .build();
+    }
 }

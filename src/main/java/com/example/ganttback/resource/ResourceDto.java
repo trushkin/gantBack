@@ -1,7 +1,10 @@
 package com.example.ganttback.resource;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class ResourceDto {
     private Long id;
+    @JsonProperty("name")
     private String name;
     private Long capacity;
     private Long occupancy;
