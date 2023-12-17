@@ -11,6 +11,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,6 +42,10 @@ public class GanttChartService {
 //        for (GanttTaskDto temp: ganttChart.getData()) {
 //            taskIds.
 //        }
+        for (GanttTaskDto temp: ganttChart.getData()) {
+            LocalDate correctDate = temp.getStartDate();
+            temp.setStartDate(correctDate.plusDays(1));
+        }
         ganttTaskRepository.deleteAllByUserId(ganttChart.getUserId());
         ganttTaskRepository.flush();
        // Long oldId;

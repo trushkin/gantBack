@@ -1,5 +1,6 @@
 package com.example.ganttback.resource;
 
+import com.example.ganttback.gantt.task.GanttTaskRepository;
 import com.example.ganttback.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -9,6 +10,8 @@ public class ResourceMapper {
     @Autowired
     ResourceRepository resourceRepository; //добавить userId
     @Autowired
+    GanttTaskRepository ganttTaskRepository;
+    @Autowired
     UserRepository userRepository;
     public ResourceDto toResourceDto(Resource resource){
         return new ResourceDtoBuilder()
@@ -16,8 +19,8 @@ public class ResourceMapper {
                 .setName(resource.getName())
                 .setCapacity(resource.getCapacity())
                 .setSalary(resource.getSalary())
-                .setOccupancy(0L) //TEMP
-                .setTotalCost(0L) //TEMP
+                .setOccupancy(ganttTaskRepository.calculateOccupancy(resource.getId())) //TEMP
+                .setTotalCost(ganttTaskRepository.calculateTotalCost(resource.getId())) //TEMP
                 .setUserId(resource.getUser().getId()) //TEMP
                 .build();
     }
