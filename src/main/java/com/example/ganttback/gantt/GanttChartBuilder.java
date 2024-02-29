@@ -1,6 +1,5 @@
 package com.example.ganttback.gantt;
 
-import com.example.ganttback.gantt.link.GanttLink;
 import com.example.ganttback.gantt.link.GanttLinkDto;
 import com.example.ganttback.gantt.task.GanttTaskDto;
 

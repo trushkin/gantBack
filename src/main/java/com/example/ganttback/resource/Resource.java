@@ -2,7 +2,6 @@ package com.example.ganttback.resource;
 
 import com.example.ganttback.gantt.task.GanttTask;
 import com.example.ganttback.user.User;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

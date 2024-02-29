@@ -3,7 +3,6 @@ package com.example.ganttback.gantt.task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +26,7 @@ public interface GanttTaskRepository extends JpaRepository<GanttTask, Long> {
             INNER JOIN resources r ON t.owner_id = r.id
             WHERE t.owner_id = :ownerId
             """)
-    Long calculateTotalCost(Long ownerId);
+    Long calculateTotalResourceCost(Long ownerId);
 
     @Query(nativeQuery = true, value = """
                         SELECT SUM(t.duration)

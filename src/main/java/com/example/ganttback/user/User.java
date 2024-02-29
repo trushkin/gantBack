@@ -40,6 +40,12 @@ public class User {
         this.links = links;
     }
 
+    public User(Long id, String email, String password) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+    }
+
     public List<GanttTask> getTasks() {
         return tasks;
     }

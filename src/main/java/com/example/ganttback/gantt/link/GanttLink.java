@@ -29,8 +29,7 @@ public class GanttLink {
     public GanttLink() {
     }
 
-    public GanttLink(Long id, Long source, Long target, Long type, User user) {
-        this.id = id;
+    public GanttLink(Long source, Long target, Long type, User user) {
         this.source = source;
         this.target = target;
         this.type = type;

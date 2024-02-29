@@ -20,7 +20,7 @@ public class ResourceMapper {
                 .setCapacity(resource.getCapacity())
                 .setSalary(resource.getSalary())
                 .setOccupancy(ganttTaskRepository.calculateOccupancy(resource.getId())) //TEMP
-                .setTotalCost(ganttTaskRepository.calculateTotalCost(resource.getId())) //TEMP
+                .setTotalCost(ganttTaskRepository.calculateTotalResourceCost(resource.getId())) //TEMP
                 .setUserId(resource.getUser().getId()) //TEMP
                 .build();
     }
